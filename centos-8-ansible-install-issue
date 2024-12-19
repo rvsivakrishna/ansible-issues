@@ -1,0 +1,250 @@
+[root@localhost ansible]# yum install ansible
+Last metadata expiration check: 0:05:56 ago on Thu 19 Dec 2024 06:04:12 AM UTC.
+Error: 
+ Problem: conflicting requests
+  - nothing provides python(abi) = 3.12 needed by ansible-9.2.0-1.el8.noarch
+  - nothing provides python3.12dist(ansible-core) >= 2.16.3 needed by ansible-9.2.0-1.el8.noarch
+  - nothing provides /usr/bin/python3.12 needed by ansible-9.2.0-1.el8.noarch
+(try to add '--skip-broken' to skip uninstallable packages or '--nobest' to use not only best candidate packages)
+[root@localhost ansible]# yum remove python3.12
+No match for argument: python3.12
+No packages marked for removal.
+Dependencies resolved.
+Nothing to do.
+Complete!
+[root@localhost ansible]# yum install python3.2
+Last metadata expiration check: 0:06:57 ago on Thu 19 Dec 2024 06:04:12 AM UTC.
+^CKeyboardInterrupt: Terminated.
+[root@localhost ansible]# yum install python3.12
+Last metadata expiration check: 0:07:07 ago on Thu 19 Dec 2024 06:04:12 AM UTC.
+No match for argument: python3.12
+Error: Unable to find a match: python3.12
+[root@localhost ansible]# sudo yum -y install epel-release
+pip2 install --user ansible
+Last metadata expiration check: 0:08:33 ago on Thu 19 Dec 2024 06:04:12 AM UTC.
+Package epel-release-8-11.el8.noarch is already installed.
+Dependencies resolved.
+====================================================================================================================================================================== Package                                     Architecture                          Version                                  Repository                           Size 
+======================================================================================================================================================================Upgrading:
+ epel-release                                noarch                                8-21.el8                                 epel                                 24 k 
+
+Transaction Summary
+======================================================================================================================================================================Upgrade  1 Package
+
+Total download size: 24 k
+Downloading Packages:
+epel-release-8-21.el8.noarch.rpm                                                                                                      276 kB/s |  24 kB     00:00     
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------Total                                                                                                                                  18 kB/s |  24 kB     00:01     
+Extra Packages for Enterprise Linux 8 - x86_64                                                                                        433 kB/s | 1.6 kB     00:00    
+Importing GPG key 0x2F86D6A1:
+ Userid     : "Fedora EPEL (8) <epel@fedoraproject.org>"
+ Fingerprint: 94E2 79EB 8D8F 25B2 1810 ADF1 21EA 45AB 2F86 D6A1
+ From       : /etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-8
+Key imported successfully
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                                                                                                              1/1 
+  Running scriptlet: epel-release-8-21.el8.noarch                                                                                                                 1/1 
+  Upgrading        : epel-release-8-21.el8.noarch                                                                                                                 1/2 
+  Running scriptlet: epel-release-8-21.el8.noarch                                                                                                                 1/2 
+  Cleanup          : epel-release-8-11.el8.noarch                                                                                                                 2/2 
+  Running scriptlet: epel-release-8-11.el8.noarch                                                                                                                 2/2 
+  Verifying        : epel-release-8-21.el8.noarch                                                                                                                 1/2 
+  Verifying        : epel-release-8-11.el8.noarch                                                                                                                 2/2 
+
+Upgraded:
+  epel-release-8-21.el8.noarch
+
+Complete!
+[root@localhost ansible]# sudo yum install python2 python3
+Last metadata expiration check: 0:10:24 ago on Thu 19 Dec 2024 06:02:30 AM UTC.
+Dependencies resolved.
+====================================================================================================================================================================== Package                                     Architecture              Version                                                     Repository                    Size 
+======================================================================================================================================================================Installing:
+ python2                                     x86_64                    2.7.18-7.module_el8.5.0+894+1c54b371                        appstream                    109 k 
+ python36                                    x86_64                    3.6.8-38.module_el8.5.0+895+a459eca8                        appstream                     19 k 
+Installing dependencies:
+ python2-libs                                x86_64                    2.7.18-7.module_el8.5.0+894+1c54b371                        appstream                    6.0 M 
+ python2-pip-wheel                           noarch                    9.0.3-18.module_el8.5.0+743+cd2f5d28                        appstream                    1.0 M 
+ python2-setuptools-wheel                    noarch                    39.0.1-13.module_el8.5.0+743+cd2f5d28                       appstream                    287 k 
+ python3-pip                                 noarch                    9.0.3-20.el8                                                appstream                     20 k 
+ python3-setuptools                          noarch                    39.2.0-6.el8                                                baseos                       163 k 
+Installing weak dependencies:
+ python2-pip                                 noarch                    9.0.3-18.module_el8.5.0+743+cd2f5d28                        appstream                    1.7 M 
+ python2-setuptools                          noarch                    39.0.1-13.module_el8.5.0+743+cd2f5d28                       appstream                    642 k 
+Enabling module streams:
+ python27                                                              2.7
+
+Transaction Summary
+======================================================================================================================================================================Install  9 Packages
+
+Total download size: 9.9 M
+Installed size: 38 M
+Is this ok [y/N]: Is this ok [y/N]: y
+Downloading Packages:
+(1/9): python2-2.7.18-7.module_el8.5.0+894+1c54b371.x86_64.rpm                                                                        174 kB/s | 109 kB     00:00    
+(2/9): python2-pip-wheel-9.0.3-18.module_el8.5.0+743+cd2f5d28.noarch.rpm                                                              1.5 MB/s | 1.0 MB     00:00     
+(3/9): python2-pip-9.0.3-18.module_el8.5.0+743+cd2f5d28.noarch.rpm                                                                    1.1 MB/s | 1.7 MB     00:01     
+(4/9): python2-setuptools-39.0.1-13.module_el8.5.0+743+cd2f5d28.noarch.rpm                                                            2.2 MB/s | 642 kB     00:00     
+(5/9): python2-setuptools-wheel-39.0.1-13.module_el8.5.0+743+cd2f5d28.noarch.rpm                                                      2.6 MB/s | 287 kB     00:00     
+(6/9): python3-pip-9.0.3-20.el8.noarch.rpm                                                                                            401 kB/s |  20 kB     00:00     
+(7/9): python36-3.6.8-38.module_el8.5.0+895+a459eca8.x86_64.rpm                                                                       332 kB/s |  19 kB     00:00     
+(8/9): python3-setuptools-39.2.0-6.el8.noarch.rpm                                                                                     1.3 MB/s | 163 kB     00:00     
+(9/9): python2-libs-2.7.18-7.module_el8.5.0+894+1c54b371.x86_64.rpm                                                                   2.5 MB/s | 6.0 MB     00:02     
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------Total                                                                                                                                 4.0 MB/s | 9.9 MB     00:02     
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                                                                                                              1/1 
+  Installing       : python3-setuptools-39.2.0-6.el8.noarch                                                                                                       1/9 
+  Installing       : python36-3.6.8-38.module_el8.5.0+895+a459eca8.x86_64                                                                                         2/9 
+  Running scriptlet: python36-3.6.8-38.module_el8.5.0+895+a459eca8.x86_64                                                                                         2/9 
+  Installing       : python3-pip-9.0.3-20.el8.noarch                                                                                                              3/9 
+  Installing       : python2-setuptools-wheel-39.0.1-13.module_el8.5.0+743+cd2f5d28.noarch                                                                        4/9 
+  Installing       : python2-pip-wheel-9.0.3-18.module_el8.5.0+743+cd2f5d28.noarch                                                                                5/9 
+  Installing       : python2-libs-2.7.18-7.module_el8.5.0+894+1c54b371.x86_64                                                                                     6/9 
+  Installing       : python2-pip-9.0.3-18.module_el8.5.0+743+cd2f5d28.noarch                                                                                      7/9 
+  Installing       : python2-setuptools-39.0.1-13.module_el8.5.0+743+cd2f5d28.noarch                                                                              8/9 
+  Installing       : python2-2.7.18-7.module_el8.5.0+894+1c54b371.x86_64                                                                                          9/9 
+  Running scriptlet: python2-2.7.18-7.module_el8.5.0+894+1c54b371.x86_64                                                                                          9/9 
+  Verifying        : python2-2.7.18-7.module_el8.5.0+894+1c54b371.x86_64                                                                                          1/9 
+  Verifying        : python2-libs-2.7.18-7.module_el8.5.0+894+1c54b371.x86_64                                                                                     2/9 
+  Verifying        : python2-pip-9.0.3-18.module_el8.5.0+743+cd2f5d28.noarch                                                                                      3/9 
+  Verifying        : python2-pip-wheel-9.0.3-18.module_el8.5.0+743+cd2f5d28.noarch                                                                                4/9 
+  Verifying        : python2-setuptools-39.0.1-13.module_el8.5.0+743+cd2f5d28.noarch                                                                              5/9 
+  Verifying        : python2-setuptools-wheel-39.0.1-13.module_el8.5.0+743+cd2f5d28.noarch                                                                        6/9 
+  Verifying        : python3-pip-9.0.3-20.el8.noarch                                                                                                              7/9 
+  Verifying        : python36-3.6.8-38.module_el8.5.0+895+a459eca8.x86_64                                                                                         8/9 
+  Verifying        : python3-setuptools-39.2.0-6.el8.noarch                                                                                                       9/9 
+
+Installed:
+  python2-2.7.18-7.module_el8.5.0+894+1c54b371.x86_64                            python2-libs-2.7.18-7.module_el8.5.0+894+1c54b371.x86_64
+  python2-pip-9.0.3-18.module_el8.5.0+743+cd2f5d28.noarch                        python2-pip-wheel-9.0.3-18.module_el8.5.0+743+cd2f5d28.noarch
+  python2-setuptools-39.0.1-13.module_el8.5.0+743+cd2f5d28.noarch                python2-setuptools-wheel-39.0.1-13.module_el8.5.0+743+cd2f5d28.noarch
+  python3-pip-9.0.3-20.el8.noarch                                                python3-setuptools-39.2.0-6.el8.noarch
+  python36-3.6.8-38.module_el8.5.0+895+a459eca8.x86_64
+
+Complete!
+[root@localhost ansible]# pip2 install --user ansible
+WARNING: Running pip install with root privileges is generally not a good idea. Try `pip2 install --user` instead.
+Collecting ansible
+  Downloading https://files.pythonhosted.org/packages/fd/f8/071905c6a67592d0852a9f340f6ab9226861eeeb97fdf4068642b22edcf3/ansible-4.10.0.tar.gz (36.8MB)
+    100% |████████████████████████████████| 36.8MB 6.3kB/s
+Collecting ansible-core~=2.11.7 (from ansible)
+  Downloading https://files.pythonhosted.org/packages/98/ea/2935bf0864196cd2c9d14548e399a110f48b3540664ddc462b39ff0b822d/ansible-core-2.11.12.tar.gz (7.1MB)
+    100% |████████████████████████████████| 7.1MB 44kB/s
+Collecting jinja2 (from ansible-core~=2.11.7->ansible)
+  Downloading https://files.pythonhosted.org/packages/7e/c2/1eece8c95ddbc9b1aeb64f5783a9e07a286de42191b7204d67b7496ddf35/Jinja2-2.11.3-py2.py3-none-any.whl (125kB)
+    100% |████████████████████████████████| 133kB 1.5MB/s
+Collecting PyYAML (from ansible-core~=2.11.7->ansible)
+  Downloading https://files.pythonhosted.org/packages/ba/d4/3cf562876e0cda0405e65d351b835077ab13990e5b92912ef2bf1a2280e0/PyYAML-5.4.1-cp27-cp27mu-manylinux1_x86_64.whl (574kB)
+    100% |████████████████████████████████| 583kB 449kB/s
+Collecting cryptography (from ansible-core~=2.11.7->ansible)
+  Downloading https://files.pythonhosted.org/packages/86/41/44173175d378c9e3a73294bb33c73725f7726def5ce267af6bd11b72eb23/cryptography-3.3.2-cp27-cp27mu-manylinux1_x86_64.whl (2.7MB)
+    100% |████████████████████████████████| 2.7MB 106kB/s
+Collecting packaging (from ansible-core~=2.11.7->ansible)
+  Downloading https://files.pythonhosted.org/packages/3e/89/7ea760b4daa42653ece2380531c90f64788d979110a2ab51049d92f408af/packaging-20.9-py2.py3-none-any.whl (40kB)
+    100% |████████████████████████████████| 40kB 531kB/s
+Collecting resolvelib<0.6.0,>=0.5.3 (from ansible-core~=2.11.7->ansible)
+  Downloading https://files.pythonhosted.org/packages/6b/f5/1b4375dbe7e3dddf074d206054ab3e27de0fdb2d32e64a1d5da25f813927/resolvelib-0.5.5-py2.py3-none-any.whl        
+Collecting MarkupSafe>=0.23 (from jinja2->ansible-core~=2.11.7->ansible)
+  Downloading https://files.pythonhosted.org/packages/fb/40/f3adb7cf24a8012813c5edb20329eb22d5d8e2a0ecf73d21d6b85865da11/MarkupSafe-1.1.1-cp27-cp27mu-manylinux1_x86_64.whl
+Collecting enum34; python_version < "3" (from cryptography->ansible-core~=2.11.7->ansible)
+  Downloading https://files.pythonhosted.org/packages/6f/2c/a9386903ece2ea85e9807e0e062174dc26fdce8b05f216d00491be29fad5/enum34-1.1.10-py2-none-any.whl
+Collecting cffi>=1.12 (from cryptography->ansible-core~=2.11.7->ansible)
+  Downloading https://files.pythonhosted.org/packages/a4/42/54bdf22cf6c8f95113af645d0bd7be7f9358ea5c2d57d634bb11c6b4d0b2/cffi-1.15.1-cp27-cp27mu-manylinux1_x86_64.whl (390kB)
+    100% |████████████████████████████████| 399kB 741kB/s
+Collecting six>=1.4.1 (from cryptography->ansible-core~=2.11.7->ansible)
+  Downloading https://files.pythonhosted.org/packages/b7/ce/149a00dd41f10bc29e5921b496af8b574d8413afcd5e30dfa0ed46c2cc5e/six-1.17.0-py2.py3-none-any.whl
+Collecting ipaddress; python_version < "3" (from cryptography->ansible-core~=2.11.7->ansible)
+  Downloading https://files.pythonhosted.org/packages/c2/f8/49697181b1651d8347d24c095ce46c7346c37335ddc7d255833e7cde674d/ipaddress-1.0.23-py2.py3-none-any.whl        
+Collecting pyparsing>=2.0.2 (from packaging->ansible-core~=2.11.7->ansible)
+  Downloading https://files.pythonhosted.org/packages/8a/bb/488841f56197b13700afd5658fc279a2025a39e22449b7cf29864669b15d/pyparsing-2.4.7-py2.py3-none-any.whl (67kB)  
+    100% |████████████████████████████████| 71kB 1.9MB/s
+Collecting pycparser (from cffi>=1.12->cryptography->ansible-core~=2.11.7->ansible)
+  Downloading https://files.pythonhosted.org/packages/62/d5/5f610ebe421e85889f2e55e33b7f9a6795bd982198517d912eb1c76e1a53/pycparser-2.21-py2.py3-none-any.whl (118kB) 
+Requirement already satisfied: PyYAML in /usr/lib64/python3.6/site-packages (from ansible-core~=2.11.7->ansible) (3.12)
+Collecting cryptography
+  Downloading cryptography-40.0.2-cp36-abi3-manylinux_2_28_x86_64.whl (3.7 MB)
+     |████████████████████████████████| 3.7 MB 6.5 MB/s
+Collecting packaging
+  Downloading packaging-21.3-py3-none-any.whl (40 kB)
+     |████████████████████████████████| 40 kB 1.7 MB/s
+Collecting resolvelib<0.6.0,>=0.5.3
+  Downloading resolvelib-0.5.4-py2.py3-none-any.whl (12 kB)
+Collecting cffi>=1.12
+  Downloading cffi-1.15.1-cp36-cp36m-manylinux_2_5_x86_64.manylinux1_x86_64.whl (402 kB)
+     |████████████████████████████████| 402 kB 11.8 MB/s
+Collecting MarkupSafe>=2.0
+  Downloading MarkupSafe-2.0.1-cp36-cp36m-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_12_x86_64.manylinux2010_x86_64.whl (30 kB)
+Collecting pyparsing!=3.0.5,>=2.0.2
+  Downloading pyparsing-3.1.4-py3-none-any.whl (104 kB)
+     |████████████████████████████████| 104 kB 3.7 MB/s
+Collecting pycparser
+  Using cached pycparser-2.21-py2.py3-none-any.whl (118 kB)
+Using legacy 'setup.py install' for ansible, since package 'wheel' is not installed.
+Using legacy 'setup.py install' for ansible-core, since package 'wheel' is not installed.
+Installing collected packages: pycparser, pyparsing, MarkupSafe, cffi, resolvelib, packaging, jinja2, cryptography, ansible-core, ansible
+    Running setup.py install for ansible-core ... done
+    Running setup.py install for ansible ... done
+Successfully installed MarkupSafe-2.0.1 ansible-4.10.0 ansible-core-2.11.12 cffi-1.15.1 cryptography-40.0.2 jinja2-3.0.3 packaging-21.3 pycparser-2.21 pyparsing-3.1.4 resolvelib-0.5.4
+  [root@localhost ~]# which ansible
+/usr/bin/which: no ansible in (/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/root/bin)
+[root@localhost ~]# sudo su -ansible
+su: invalid option -- 'a'
+Try 'su --help' for more information.
+[root@localhost ~]# sudo su - ansible
+su: user ansible does not exist
+[root@localhost ~]# find / -name ansible
+/etc/yum.repos.d/ansible
+/etc/yum.repos.d/ansible/bin/ansible
+/etc/yum.repos.d/ansible/lib/ansible
+/etc/yum.repos.d/ansible/test/integration/targets/ansible
+/etc/yum.repos.d/ansible/test/integration/targets/collections/collection_root_user/ansible_collections/ansible
+/etc/yum.repos.d/ansible/test/support/network-integration/collections/ansible_collections/ansible
+/etc/yum.repos.d/ansible/test/support/windows-integration/collections/ansible_collections/ansible
+/etc/yum.repos.d/ansible/test/units/utils/collection_loader/fixtures/collections/ansible_collections/ansible
+/etc/yum.repos.d/ansible/test/units/utils/collection_loader/fixtures/collections_masked/ansible_collections/ansible
+/etc/yum.repos.d/ansible/test/units/utils/collection_loader/fixtures/playbook_path/collections/ansible_collections/ansible
+/root/.local/lib/python2.7/site-packages/ansible
+/root/.local/lib/python2.7/site-packages/ansible_test/_data/injector/ansible
+/root/.local/lib/python2.7/site-packages/ansible_collections/ansible
+/root/.local/lib/python2.7/site-packages/ansible_collections/netbox/netbox/docs/js/ansible
+/root/.local/lib/python3.6/site-packages/ansible
+/root/.local/lib/python3.6/site-packages/ansible_test/_data/injector/ansible
+/root/.local/lib/python3.6/site-packages/ansible_collections/ansible
+/root/.local/lib/python3.6/site-packages/ansible_collections/netbox/netbox/docs/js/ansible
+/root/.local/bin/ansible
+/usr/share/ansible
+[root@localhost ~]# /root/.local/bin/ansible --version
+[DEPRECATION WARNING]: Ansible will require Python 3.8 or newer on the controller starting with Ansible 2.12. Current version: 3.6.8 (default, Sep 10 2021, 09:13:53)
+ [GCC 8.5.0 20210514 (Red Hat 8.5.0-3)]. This feature will be removed from ansible-core in version 2.12. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+/root/.local/lib/python3.6/site-packages/ansible/parsing/vault/__init__.py:44: CryptographyDeprecationWarning: Python 3.6 is no longer supported by the Python core team. Therefore, support for it is deprecated in cryptography. The next release of cryptography will remove support for Python 3.6.
+  from cryptography.exceptions import InvalidSignature
+ansible [core 2.11.12] 
+  config file = None
+  configured module search path = ['/root/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
+  ansible python module location = /root/.local/lib/python3.6/site-packages/ansible
+  ansible collection location = /root/.ansible/collections:/usr/share/ansible/collections
+  executable location = /root/.local/bin/ansible
+  python version = 3.6.8 (default, Sep 10 2021, 09:13:53) [GCC 8.5.0 20210514 (Red Hat 8.5.0-3)]
+  jinja version = 3.0.3
+  libyaml = True
+[root@localhost ~]# ln -s /root/.local/bin/ansible /usr/sbin/ansible
+[root@localhost ~]# ln -s /root/.local/bin/ansible /usr/bin/ansible
+[root@localhost ~]# which ansible
+/usr/sbin/ansible
+[root@localhost ~]# find / -name ansible-playbook
+/etc/yum.repos.d/ansible/bin/ansible-playbook
+/root/.local/lib/python2.7/site-packages/ansible_test/_data/injector/ansible-playbook
+/root/.local/lib/python3.6/site-packages/ansible_test/_data/injector/ansible-playbook
+/root/.local/bin/ansible-playbook
+[root@localhost ~]# ln -s /root/.local/bin/ansible-playbook /usr/sbin/ansible-playbook
+[root@localhost ~]# ln -s /root/.local/bin/ansible-playbook /usr/bin/ansible-playbook
+  
